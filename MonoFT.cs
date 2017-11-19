@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -7,6 +8,15 @@ namespace MonoFT
     /// This is the main type for your game.
     public class MonoFT : Game
     {
+        
+        /// The main entry point for the application.
+        [STAThread]
+        static void Main()
+        {
+            using (var game = new MonoFT())
+                game.Run();
+        }
+        
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         
